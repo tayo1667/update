@@ -1,0 +1,114 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #4e4376; /* Replaced with first color code from body background */
+    color: #fff; /* Replaced with text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Add padding to ensure content is not touching the edges on small devices */
+    flex-direction: column; /* Stack content vertically on small devices */
+}
+
+/* Container for the sections */
+.sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+.section {
+    opacity: 0;
+    transform: translateX(-50px); /* Start off-screen */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slide-in {
+    opacity: 1;
+    transform: translateX(0); /* Slide to original position */
+}
+
+/* Section Styling */
+.section {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for sections */
+    width: 23%;
+    padding: 20px;
+    border-radius: 12px; /* Slightly more rounded corners for a refined look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smoother hover transition */
+    overflow: hidden; /* Ensure content stays within bounds of rounded corners */
+}
+
+/* Section hover effect */
+.section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 12px 0;
+    font-size: 1.1rem; /* Slightly larger text for better readability */
+    color: #ddd; /* Light gray for list items */
+}
+
+/* Link Styling */
+a {
+    color: #61dafb; /* Light blue link color */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600; /* Bolder text for links */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Hover effect for links */
+a:hover {
+    color: #4e4376; /* Replaced with hover color */
+    text-decoration: underline;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 1024px) {
+    .section {
+        width: 48%; /* Make sections larger on medium-sized screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        width: 48%;
+        padding: 25px; /* Increase padding for better mobile experience */
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        width: 100%; /* Sections take up full width on smaller screens */
+        margin-bottom: 20px;
+        padding: 15px; /* Slightly reduce padding on very small screens */
+    }
+
+    /* Adjust font sizes on very small devices */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .section a {
+        font-size: 1.1rem;
+    }
+}

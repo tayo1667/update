@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbytpay Bot</title>
+    <link rel="stylesheet" href="paybot.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Type your message here..." />
+        <button id="send-btn">Send</button>
+    </div>
+    
+    <div class="popup" id="popup">
+        <p>It looks like you are asking about something that's not related to transfers. I recommend speaking with our <a href="test.html"> Q&A Bot</a> for more assistance.</p> 
+        <button onclick="closePopup()">OK</button>
+    </div>
+
+    <div id="transfer-inputs" style="display: none;">
+        <div id="account-number">
+            <label>Account Number:</label>
+            <input type="text" id="account-number-input" placeholder="Enter account number">
+        </div>
+        <div id="account-details" style="display: none;">
+            <p id="bank-name"></p>
+            <p id="account-name"></p>
+           <a href="kora.html">  <button id="confirm-btn" style="display: none;">Confirm</button></a>
+          
+        </div>
+    </div>
+</div>
+
+<script src="paybot.js"></script>
+</body>
+</html>

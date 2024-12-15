@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajo Savings Plan</title>
+    <link rel="stylesheet" href="ajo.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Ajo Savings Plan</h1>
+            <p>Save together with friends and distribute the savings weekly</p>
+        </header>
+
+        <section id="user-section">
+            <div class="user-input">
+                <label for="user-name">Your Name:</label>
+                <input type="text" id="user-name" placeholder="Enter your name">
+            </div>
+            <div class="user-input">
+                <label for="amount">Contribution Amount (in $):</label>
+                <input type="number" id="amount" placeholder="Enter contribution">
+            </div>
+            <button id="add-contribution">Add Contribution</button>
+        </section>
+
+        <section id="summary-section">
+            <h2>Summary</h2>
+            <p>Total Contributions: <span id="total-contributions">$0</span></p>
+            <p>Next Contribution goes to: <span id="next-contributor">None yet</span></p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Ajo Savings Plan</p>
+        </footer>
+
+        <a style="color: #6200ea;"href= "home.html" id="home-link">Home </a>
+    </div>
+
+    <script src="ajo.js"></script>
+</body>
+</html>

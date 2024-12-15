@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross-Border Payments</title>
+    <link rel="stylesheet" href="cross.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Cross-Border Payment</h1>
+        </header>
+
+        <section id="currency-section">
+            <div class="currency-selector">
+                <label for="from-currency">From:</label>
+                <select id="from-currency">
+                    <option value="USD">🇺🇸 USD</option>
+                    <option value="EUR">🇪🇺 EUR</option>
+                    <option value="GBP">🇬🇧 GBP</option>
+                    <option value="INR">🇮🇳 INR</option>
+                    <option value="JPY">🇯🇵 JPY</option>
+                </select>
+            </div>
+
+            <div class="currency-selector">
+                <label for="to-currency">To:</label>
+                <select id="to-currency">
+                    <option value="INR">🇮🇳 INR</option>
+                    <option value="USD">🇺🇸 USD</option>
+                    <option value="EUR">🇪🇺 EUR</option>
+                    <option value="GBP">🇬🇧 GBP</option>
+                    <option value="JPY">🇯🇵 JPY</option>
+                </select>
+            </div>
+
+            <div class="amount-selector">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" placeholder="Enter amount" />
+            </div>
+
+            <button id="convert-btn">Convert</button>
+
+            <div id="converted-amount-section">
+                <h3>Converted Amount:</h3>
+                <p id="converted-amount">0</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Cross-Border Payments</p>
+            <a href="#" id="theme-toggle">Toggle Dark/Light Mode</a>
+        </footer>
+    </div>
+
+    <script src="cross.js"></script>
+</body>
+</html>

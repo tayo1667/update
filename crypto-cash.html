@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto to Fiat Conversion</title>
+    <link rel="stylesheet" href="crypto.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Crypto to Fiat Conversion</h1>
+        </header>
+
+        <section id="crypto-section">
+            <div class="wallet-container">
+                <h3>Generate Wallet Address</h3>
+                <button id="generate-wallet-btn">Generate Wallet</button>
+                <div id="wallet-address" class="wallet-address">
+                    <!-- Wallet address will appear here -->
+                </div>
+            </div>
+
+            <div class="deposit-section">
+                <h3>Deposit Crypto</h3>
+                <label for="deposit-amount">Amount (BTC):</label>
+                <input type="number" id="deposit-amount" placeholder="Enter amount to deposit">
+                <button id="deposit-btn">Deposit</button>
+            </div>
+
+            <div class="conversion-section">
+                <h3>Convert Crypto to Fiat</h3>
+                <label for="crypto-to-fiat">Select Fiat Currency:</label>
+                <select id="fiat-currency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                </select>
+                <button id="convert-btn">Convert</button>
+
+                <div id="converted-amount">
+                    <!-- Converted fiat amount will appear here -->
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Crypto Conversion</p>
+            <a href="home.html" id="home-link">Home</a> | <a href="#" id="theme-toggle">Toggle Dark/Light Mode</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

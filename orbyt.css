@@ -1,0 +1,173 @@
+/* Resetting some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #4e4376, #2b5876);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    padding: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+/* Welcome Screen Styling */
+.welcome-container {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+    animation: fadeIn 1.5s ease;
+}
+
+#welcome-text {
+    font-size: clamp(2rem, 5vw, 3rem); /* Adjust dynamically based on screen size */
+    color: #fff;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* Each word styled individually */
+#welcome-text span {
+    opacity: 0;
+    animation: fadeInWord 1s forwards;
+}
+
+#welcome-text span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#welcome-text span:nth-child(2) {
+    animation-delay: 1s;
+}
+
+#welcome-text span:nth-child(3) {
+    animation-delay: 2s;
+}
+
+#welcome-text span:nth-child(4) {
+    animation-delay: 3s;
+}
+
+/* Word Fade-in Animation */
+@keyframes fadeInWord {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Auth Container (Login & Sign Up) */
+.auth-container {
+    display: none;
+    text-align: center;
+    background-color: #ffffff;
+    color: #333;
+    padding: clamp(20px, 5vw, 40px); /* Adjust padding based on screen size */
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    animation: slideUp 1s ease forwards;
+}
+
+/* Button Styling */
+button {
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 40px); /* Dynamic padding */
+    background-color: #61dafb;
+    color: #333;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Font adjusts dynamically */
+    margin: 15px 0;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effects for buttons */
+button:hover {
+    transform: translateY(-5px);
+    background-color: #4e4376;
+    color: #fff;
+}
+
+/* Footer Styling */
+footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem); /* Responsive font size */
+    color: rgba(255, 255, 255, 0.8);
+    animation: fadeIn 2s ease;
+}
+
+footer a {
+    color: #61dafb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #4e4376;
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .auth-container {
+        width: 90%;
+    }
+
+    #welcome-text {
+        font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+    }
+
+    button {
+        font-size: clamp(0.9rem, 1.8vw, 1rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .auth-container {
+        width: 95%;
+        margin-top: 10px;
+        animation: slideUp 1.5s ease forwards;
+    }
+
+    #welcome-text {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    button {
+        width: 100%;
+        font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+    }
+
+    footer {
+        font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+    }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        /* Basic styles for the sections and slide-in effect */
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .section.slide-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .container {
+            text-align: center;
+        }
+        .welcome-message {
+            font-size: 24px;
+        }
+        .action-message {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .sections {
+            margin-top: 30px;
+        }
+        .section ul {
+            list-style: none;
+        }
+        .section li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-message">
+            <p id="welcome-text"></p>
+        </div>
+        <div class="action-message" id="action-message">
+            <!-- Placeholder for "What would you like to do today?" message -->
+        </div>
+        <div class="sections">
+            <div class="section" id="section1">
+                <ul>
+                    <li><a href="paybot.html">Transfer Bot</a></li>
+                </ul>
+            </div>
+            <div class="section" id="section2">
+                <ul>
+                    <li><a href="crossboarder.html">Crossboarder</a></li>
+                </ul>
+            </div>
+            <div class="section" id="section3">
+                <ul>
+                    <li><a href="ajo.html">Ajo</a></li>
+                </ul>
+            </div>
+            <div class="section" id="section4">
+                <ul>
+                    <li><a href="airdrop.html">Airdrop</a></li>
+                </ul>
+            </div>
+            <div class="section" id="section5">
+                <ul>
+                    <li><a href="crypto-cash.html">Crypto-Cash</a></li>
+                </ul>
+            </div>
+            <div class="section" id="section6">
+                <ul>
+                    <li><a href="crypto-crpto.html">Crypto swap </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const welcomeText = document.getElementById("welcome-text");
+        const actionMessage = document.getElementById("action-message");
+        const sections = document.querySelectorAll('.section');
+        
+        let text = "Hi Tayo, welcome to OrbytPay";
+        let actionText = "What would you like to do today?";
+        let index = 0;
+
+        // Typewriter effect for the welcome message
+        function typeWriterWelcome() {
+            if (index < text.length) {
+                welcomeText.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriterWelcome, 100);
+            } else {
+                // Once the welcome message is done, show "What would you like to do today?"
+                setTimeout(() => {
+                    actionMessage.innerHTML = actionText;
+                    // Trigger the section slides after a slight delay
+                    setTimeout(() => {
+                        sections.forEach((section, i) => {
+                            setTimeout(() => {
+                                section.classList.add('slide-in');
+                            }, 500 + (i * 300)); // Add delay for each section
+                        });
+                    }, 500); // Delay before showing sections
+                }, 500);
+            }
+        }
+
+        typeWriterWelcome();
+    </script>
+</body>
+</html>

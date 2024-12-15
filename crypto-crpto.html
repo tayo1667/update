@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Exchange Service</title>
+    <style>
+        /* Define Color Variables */
+        :root {
+            --purple: #4e4376; /* Purple */
+            --blue: #2b5876; /* Original Blue */
+            --light-blue: #61dafb; /* Light Blue */
+            --dark-blue: #1d3b52; /* Darker Blue for more intensity */
+            --white: #fff;
+            --dark-text: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3f4f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--dark-blue); /* Darker Blue for header */
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input:focus, select:focus, button:focus {
+            border-color: var(--light-blue);
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+        }
+
+        button {
+            background: var(--blue); /* More Blue for button background */
+            color: var(--white);
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: var(--dark-blue); /* Darker Blue on hover */
+        }
+
+        .output {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #e6fffa;
+            color: #2c7a7b;
+            border: 1px solid #b2f5ea;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .error {
+            background: #ffe6e6;
+            color: #e53e3e;
+            border: 1px solid #feb2b2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--dark-blue); /* More blue for footer */
+            color: var(--white);
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Crypto Exchange Service</h1>
+    </header>
+
+    <div class="container">
+        <h2>Trade Your Crypto with Ease</h2>
+
+        <form id="exchange-form">
+            <div class="form-group">
+                <label for="send">Select the Crypto You Send:</label>
+                <select id="send" required>
+                    <option value="btc">Bitcoin (BTC)</option>
+                    <option value="eth">Ethereum (ETH)</option>
+                    <option value="ltc">Litecoin (LTC)</option>
+                    <option value="bnb">Binance Coin (BNB)</option>
+                    <option value="xrp">Ripple (XRP)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="receive">Select the Crypto You Want to Receive:</label>
+                <select id="receive" required>
+                    <option value="usdt">Tether (USDT)</option>
+                    <option value="eth">Ethereum (ETH)</option>
+                    <option value="btc">Bitcoin (BTC)</option>
+                    <option value="bnb">Binance Coin (BNB)</option>
+                    <option value="xrp">Ripple (XRP)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Enter the Amount to Send:</label>
+                <input type="number" id="amount" step="0.0001" placeholder="e.g., 0.5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="wallet">Enter Your Wallet Address:</label>
+                <input type="text" id="wallet" placeholder="" required>
+            </div>
+
+            <button type="submit">Exchange Now</button>
+        </form>
+
+        <div id="output" class="output" style="display: none;"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Crypto Exchange Service. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('exchange-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const send = document.getElementById('send').value;
+            const receive = document.getElementById('receive').value;
+            const amount = document.getElementById('amount').value;
+            const wallet = document.getElementById('wallet').value;
+
+            const output = document.getElementById('output');
+
+            if (send === receive) {
+                output.style.display = 'block';
+                output.textContent = 'Error: Sending and receiving currencies cannot be the same.';
+                output.classList.add('error');
+                output.classList.remove('output');
+            } else {
+                output.style.display = 'block';
+                output.classList.add('output');
+                output.classList.remove('error');
+                output.textContent = `You are exchanging ${amount} ${send.toUpperCase()} for ${receive.toUpperCase()}.
+                Please wait while we process your request. Your funds will be sent to: ${wallet}`;
+            }
+        });
+    </script>
+</body>
+</html>

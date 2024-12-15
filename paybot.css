@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1e2a47, #4e4376); /* Dark gradient for a techy feel */
+    color: #f1f1f1;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+    text-align: center;
+    background-size: cover;
+    animation: backgroundAnimation 10s infinite linear; /* Smooth background animation */
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker container */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px); /* Glassmorphism effect */
+}
+
+/* Chat Container */
+#chat-container {
+    max-width: 450px;
+    width: 100%;
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+/* Chat Box */
+#chat-box {
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    border: 1px solid #444;
+    font-size: 16px;
+    color: #ddd;
+    transition: all 0.3s ease;
+}
+
+/* Chat Messages */
+#chat-box .bot-message,
+#chat-box .user-message {
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    max-width: 75%;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Bot Message */
+#chat-box .bot-message {
+    background-color: #444;
+    align-self: flex-start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* User Message */
+#chat-box .user-message {
+    background-color: #61dafb; /* Light blue */
+    color: #222;
+    align-self: flex-end;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Box */
+input[type="text"] {
+    padding: 15px;
+    width: 80%;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: 1px solid #444;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border: 1px solid #61dafb;
+    outline: none;
+}
+
+/* Send Button */
+button#send-btn {
+    width: 18%;
+    padding: 15px;
+    background-color: #61dafb;
+    color: #fff;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button#send-btn:hover {
+    background-color: #4da1d1;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(50, 50, 50, 0.9); /* Darker background for the popup */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    display: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+.popup button {
+    background-color: #4da1d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #61dafb;
+}
+
+/* Transfer Input Fields */
+#transfer-inputs {
+    display: none;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#account-number {
+    display: none;
+    margin-bottom: 10px;
+}
+
+#account-number input {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+#account-details {
+    display: none;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#confirm-btn {
+    display: none;
+    padding: 12px 20px;
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#confirm-btn:hover {
+    background-color: #4da1d1;
+}

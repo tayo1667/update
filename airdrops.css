@@ -1,0 +1,204 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('your-image-url-here.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover; /* Ensure the image covers the full screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #f1f1f1; /* Light gray text color */
+}
+
+/* Headers Styling */
+h1, h3 {
+    color: #f1f1f1; /* Light gray text color */
+    margin: 10px 0;
+}
+
+/* Container styling for authentication and main container */
+.auth-container, .container {
+    text-align: center;
+    background-color: rgba(31, 31, 31, 0.8); /* Dark gray with transparency for readability */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Button Styling */
+button {
+    padding: 12px 24px;
+    background-color: #61dafb; /* Light blue background */
+    color: black;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #4da1d1; /* Medium blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Value Styling */
+#value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #61dafb; /* Light blue for emphasis */
+    margin: 20px 0;
+}
+
+/* Image Styling */
+#airdropImage {
+    width: 180px;
+    height: 180px;
+    margin: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#airdropImage:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Referral Code Section Styling */
+#referralCodeSection {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent background */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Copy Code Button Styling */
+#copyCode {
+    margin-top: 10px;
+    background-color: #61dafb; /* Light blue for copy button */
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#copyCode:hover {
+    background-color: #4da1d1; /* Medium blue on hover */
+}
+
+/* Link Styling */
+.link {
+    color: #61dafb; /* Light blue for links */
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+.link:hover {
+    color: #4da1d1; /* Medium blue on hover */
+}
+
+/* Chat Container Styles */
+.chat-container {
+    background-color: #1f1f1f; /* Dark gray background for the chat container */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.chat-message {
+    background-color: #444; /* Medium dark gray background for messages */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    color: #ddd; /* Light gray text color */
+}
+
+.chat-message.user {
+    background-color: #333; /* Dark gray background for user messages */
+    color: #222; /* Very dark gray text color for user messages */
+}
+
+/* Input Field Styling */
+input[type="text"], input[type="number"], textarea {
+    background-color: #333; /* Dark gray background for input fields */
+    color: #f1f1f1; /* Light gray text */
+    border: 1px solid #ddd; /* Light gray border */
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+    border-color: #61dafb; /* Light blue on focus */
+    outline: none;
+}
+
+/* Popup Styling */
+.popup {
+    background-color: rgb(50, 50, 50); /* Darker gray for popup background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .container, .auth-container, .chat-container, .popup {
+        padding: 20px;
+        width: 90%; /* Reduce width on small screens */
+    }
+
+    #value {
+        font-size: 2.5rem; /* Smaller text size for value on smaller screens */
+    }
+
+    button {
+        font-size: 16px; /* Smaller font for buttons on small screens */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust header size on smaller screens */
+    }
+
+    h3 {
+        font-size: 18px; /* Adjust sub-header size */
+    }
+}
+
+@media (max-width: 400px) {
+    .container, .auth-container, .chat-container, .popup {
+        padding: 15px;
+    }
+
+    #value {
+        font-size: 2rem; /* Further adjust value text size */
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}

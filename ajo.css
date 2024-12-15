@@ -1,0 +1,121 @@
+/* Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e2a47; /* Dark background */
+    color: #f1f1f1; /* Light text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 20px;
+}
+
+/* Container */
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for container */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    color: #61dafb; /* Light blue for header */
+}
+
+header p {
+    font-size: 18px;
+    color: #ddd; /* Light gray for paragraph text */
+}
+
+/* User Input Section */
+#user-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.user-input {
+    margin-bottom: 15px;
+}
+
+.user-input label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+    color: #ddd; /* Light gray for labels */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #444; /* Dark border color */
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: #333; /* Dark background for inputs */
+    color: #f1f1f1; /* Light text for inputs */
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #61dafb; /* Light blue for button */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4da1d1; /* Medium blue for button hover */
+}
+
+/* Summary Section */
+#summary-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#summary-section h2 {
+    font-size: 24px;
+    color: #f1f1f1; /* Light text for summary header */
+}
+
+#summary-section p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ddd; /* Light gray for summary text */
+}
+
+#summary-section span {
+    font-weight: bold;
+    color: #61dafb; /* Light blue for bold text in summary */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+footer p {
+    color: #ddd; /* Light gray for footer text */
+}
